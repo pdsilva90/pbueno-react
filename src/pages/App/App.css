@@ -1,4 +1,73 @@
 .App {
+  height: 100%;
+
+}
+:root {
+  --whitesmoke: rgb(216, 215, 214);
+  --dark-gray: rgb(143, 143, 143);
+  --charcoal: rgb(56, 56, 56);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0 auto;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  color: var(--charcoal);
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: var(--dark-gray);
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.966);
+}
+
+/* .nav-logo-link {
+  width: 20%;
+  display: block;
+  cursor: pointer;
+} */
+
+/* .nav-logo {
+  width: 100%;
+} */
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  text-decoration: none;
+}
+
+.nav-item {
+  list-style: none;
+  text-decoration: none;
+  color: var(--dark-gray);
+  transition: transform 1s ease-in-out;
+}
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +104,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

@@ -16,6 +16,12 @@ export default function LoginForm({ setUser }) {
   async function handleSubmit(evt) {
     // Prevent form from being submitted to the server
     evt.preventDefault();
+    
+    if (!credentials.email || !credentials.password) {
+      setError('Please enter your email and password.');
+      return;
+    }
+
     try {
       // The promise returned by the signUp service method 
       // will resolve to the user object included in the

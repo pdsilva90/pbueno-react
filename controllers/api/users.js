@@ -15,8 +15,16 @@ function checkToken(req, res) {
 
 async function create(req, res) {
   try {
+    const { name, email, password, isAdmin } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     // Add the user to the db
-    const user = await User.create(req.body);
+    const user = await User.create({
+      name,
+      email,
+      password: hashedPassword,
+      isAdmin,
+    });
     const token = createJWT(user);
     res.json(token);
   } catch (err) {
@@ -29,6 +37,7 @@ async function login(req, res) {
     const user = await User.findOne({email: req.body.email});
     if (!user) throw new Error();
     const match = await bcrypt.compare(req.body.password, user.password);
+    console.log(user)
     if (!match) throw new Error();
     const token = createJWT(user);
     res.json(token);

@@ -1,0 +1,11 @@
+:root {
+  --whitesmoke: rgb(216, 215, 214);
+  --dark-gray: rgb(143, 143, 143);
+  --charcoal: rgb(56, 56, 56);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

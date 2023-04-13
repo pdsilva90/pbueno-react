@@ -16,7 +16,12 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  isAdmin: {
+    type: Boolean,
+    require: true,
+    default: false,
+  },
 }, {
   timestamps: true,
   toJSON: {
