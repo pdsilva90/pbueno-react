@@ -1,13 +1,14 @@
-import './OrderDetail.css';
-import LineItem from '../LineItem/LineItem';
+import './CartDetail.css';
+import CartItem from '../CartItem/CartItem';
+import * as ordersAPI from '../../utilities/orders-api';
 
 // Used to display the details of any order, including the cart (unpaid order)
-export default function OrderDetail({ order, handleChangeQty, handleCheckout }) {
+export default function CartDetail({ order, handleChangeQty, handleCheckout }) {
   if (!order) return null;
 
   const lineItems = order.lineItems.map(item =>
-    <LineItem
-      lineItem={item}
+    <CartItem
+      cartItem={item}
       isPaid={order.isPaid}
       handleChangeQty={handleChangeQty}
       key={item._id}
@@ -16,6 +17,7 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
 
   return (
     <div className="OrderDetail">
+      {/* {lineItems} */}
       <div className="section-heading">
         {order.isPaid ?
           <span>ORDER <span className="smaller">{order.orderId}</span></span>
@@ -43,7 +45,7 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
             </section>
           </>
           :
-          <div className="hungry">Hungry?</div>
+          <div className=""></div>
         }
       </div>
     </div>

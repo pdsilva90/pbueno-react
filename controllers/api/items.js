@@ -12,7 +12,7 @@ module.exports = {
 async function index(req, res) {
   const items = await Item.find({}).sort('name').populate('category').exec();
   // re-sort based upon the sortOrder of the populated categories
-  items.sort((a, b) => a.category.sortOrder - b.category.sortOrder);
+  // items.sort((a, b) => a.category.sortOrder - b.category.sortOrder);
   res.json(items);
 }
 
@@ -23,14 +23,15 @@ async function show(req, res) {
 
 
 async function createItem(req, res) {
+  console.log(req.body.category)
 const newItem = new Item({
   name: req.body.name,
-  category: req.body.category,
+  category: req.body.category.name,
   price: req.body.price,
 });
 newItem.save((err, item) => {
   if (err) {
-    res.status(500).send(err);
+    res.status(400).send(err);
   } else {
     res.json(item);
   }
@@ -38,12 +39,14 @@ newItem.save((err, item) => {
 };
 
 async function updateItem(req, res) {
+  console.log(req.params.id)
 Item.findByIdAndUpdate(
   req.params.id,
   {
     name: req.body.name,
-    category: req.body.category,
+    category: req.body.category.name,
     price: req.body.price,
+    
   },
   { new: true },
   (err, item) => {

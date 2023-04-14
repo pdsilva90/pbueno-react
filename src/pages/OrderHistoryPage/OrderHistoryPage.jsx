@@ -1,5 +1,5 @@
 import { checkToken } from '../../utilities/users-service';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
+import OrderDetail from '../../components/CartDetail/CartDetail';
 
 export default function OrderHistoryPage() {
   async function handleCheckToken() {

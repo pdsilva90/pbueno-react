@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
 // import MenuList from '../../components/MenuList/MenuList';
 import CategoryList from '../../components/CategoryList/CategoryList';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
+import OrderDetail from '../../components/CartDetail/CartDetail';
 // import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import { Navbar } from 'react-bootstrap';
 

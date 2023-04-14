@@ -52,6 +52,7 @@ const isAdmin = require('./config/auth')
 // app.use('/api/admin', ensureLoggedIn, isAdmin, require('./routes/api/admin'));
 app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
 app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
+app.use('/api/categories', ensureLoggedIn, require('./routes/api/categories'));
 const adminRouter = require('./routes/api/admin');
 
 // The following "catch all" route (note the *) is necessary

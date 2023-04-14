@@ -8,7 +8,7 @@ import * as ordersAPI from '../../utilities/orders-api';
 import { Link, useNavigate } from 'react-router-dom';
 // import Logo from '../../components/Logo/Logo';
 import CategoryList from '../../components/CategoryList/CategoryList';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
+import OrderDetail from '../CartDetail/CartDetail';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 
 
@@ -37,6 +37,9 @@ export default function NavBar({ user, setUser }) {
         </li>
         <li>
         <Link to="/cart">Cart</Link>
+        </li>
+        <li>
+        <Link to="/new">Add New Item</Link>
         </li>
         <li>
         <Link to="" onClick={handleLogOut}>Log Out</Link>

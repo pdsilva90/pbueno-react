@@ -10,8 +10,12 @@ import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import { getUser } from '../../utilities/users-service';
 import NavBar from '../../components/NavBar/NavBar';
 import CategoryList from '../../components/CategoryList/CategoryList';
+import Categories from '../Categories/Categories';
 import ItemsPage from '../ItemsPage/ItemsPage';
 import './App.css';
+import CartPage from '../Cart/CartPage';
+import EditPage from '../Edit/EditPage';
+import NewItemForm from '../../components/NewItemForm/NewItemForm';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -24,8 +28,11 @@ export default function App() {
           {/* client-side route that renders the component instance if the path matches the url in the address bar */}
           <Route path="/" element={<HomePage user={user} setUser={setUser} />} />
           <Route path="/items" element={<ItemsPage />} />
-          <Route path="/category" element={<CategoryList />} />
+          <Route path="/categories" element={<Categories />} />
           <Route path="/orders" element={<OrderHistoryPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/edit/:id" element={<EditPage />} />
+          <Route path="/new" element={<NewItemForm />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/*" element={<Navigate to="/" />} />
           {/* <Route path="/admin" component={Admin} /> */}

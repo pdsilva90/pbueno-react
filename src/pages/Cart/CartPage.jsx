@@ -1,55 +1,54 @@
-import { useState, useEffect, useRef } from 'react';
-import * as itemsAPI from '../../utilities/items-api';
+import React, { useState, useEffect } from 'react'
+import CartDetail from '../../components/CartDetail/CartDetail';
 import * as ordersAPI from '../../utilities/orders-api';
-import './NewOrderPage.css';
-import { Link, useNavigate } from 'react-router-dom';
-// import Logo from '../../components/Logo/Logo';
+import { useNavigate } from 'react-router-dom';
 
-import CategoryList from '../../components/CategoryList/CategoryList';
-import OrderDetail from '../../components/OrderDetail/OrderDetail';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
-
-export default function CartPage({ user, setUser }) {
-  const [menuItems, setMenuItems] = useState([]);
-  const [activeCat, setActiveCat] = useState('');
+export default function CartPage() {
+  const [cartItems, setCartItems] = useState([]);
   const [cart, setCart] = useState(null);
-  const categoriesRef = useRef([]);
   const navigate = useNavigate();
 
-  // The empty dependency array causes the effect
-  // to run ONLY after the FIRST render
   useEffect(function() {
-    async function getItems() {
-      const items = await itemsAPI.getAll();
-      categoriesRef.current = [...new Set(items.map(item => item.category.name))];
-      setMenuItems(items);
-      setActiveCat(categoriesRef.current[0]);
-    }
-    getItems();
-
-    // Load cart (a cart is the unpaid order for the logged in user)
-    async function getCart() {
-      const cart = await ordersAPI.getCart();
-      setCart(cart);
-    }
-    getCart();
-  }, []);
-
-  /*--- Event Handlers ---*/
-  async function handleAddToOrder(itemId) {
-    // 1. Call the addItemToCart function in ordersAPI, passing to it the itemId, and assign the resolved promise to a variable named cart.
-    const updatedCart = await ordersAPI.addItemToCart(itemId);
-    // 2. Update the cart state with the updated cart received from the server
-    setCart(updatedCart);
+    // async function getInfo() {
+    //     const items = await itemsApi.getAll();
+    //     const user = await userService.getUser()
+    //     console.log(items)
+    //      setUser(user)
+    //      setItems(items) 
+    //      setIsAdmin(user?.isAdmin || false);
+    // }
+    // getInfo();
+  
+  async function getCart() {
+    const cart = await ordersAPI.getCart();
+    setCart(cart);
   }
+  getCart();
+}, []);
+
 
   async function handleChangeQty(itemId, newQty) {
     const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
-    setCart(updatedCart);
+    setCartItems(updatedCart.items);
   }
 
   async function handleCheckout() {
     await ordersAPI.checkout();
     navigate('/orders');
   }
+
+  return (
+    <>
+    <div className='CartPage'>CartPage</div>
+    <div>
+      <p>Items in Cart: {cartItems.length} </p>
+    </div>
+    <CartDetail
+    cartItems={cartItems}
+    handleChangeQty={handleChangeQty}
+    handleCheckout={handleCheckout}
+    order={cart}
+    />
+    </>
+  )
 }
