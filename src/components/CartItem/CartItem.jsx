@@ -1,4 +1,7 @@
 import './CartItem.css';
+import * as ordersAPI from '../../utilities/orders-api';
+import * as sendRequest from '../../utilities/send-request';
+import CartDetail from '../CartDetail/CartDetail';
 
 export default function CartItem({ cartItem, isPaid, handleChangeQty }) {
   return (
@@ -11,14 +14,14 @@ export default function CartItem({ cartItem, isPaid, handleChangeQty }) {
       <div className="qty" style={{ justifyContent: isPaid && 'center' }}>
         {!isPaid &&
           <button
-            className="btn-xs"
+            className="btn-s"
             onClick={() => handleChangeQty(cartItem.item._id, cartItem.qty - 1)}
           >−</button>
         }
-        <span>{cartItem.qty}</span>
+        <span className='item-qty'>{cartItem.qty}</span>
         {!isPaid &&
           <button
-            className="btn-xs"
+            className="btn-s"
             onClick={() => handleChangeQty(cartItem.item._id, cartItem.qty + 1)}
           >+</button>
         }

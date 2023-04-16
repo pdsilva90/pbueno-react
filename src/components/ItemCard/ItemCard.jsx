@@ -7,8 +7,8 @@ import * as ordersAPI from '../../utilities/orders-api';
 export default function ItemCard({ item, handleAddToCart }) {
 
   return (
-    <div>
-      {/* <img src={item.image} alt={item.name} /> */}
+    <div className='item-card-details'>
+      <img className='item-card-img' src={item.imageUrl} />
       <p>Name: {item.name}</p>
       {/* <p>Category: {item.category.name}</p> */}
       <p>Price: ${item.price}</p>

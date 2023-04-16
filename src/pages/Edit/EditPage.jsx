@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import sendRequest from '../../utilities/send-request';
 
 function EditPage() {
@@ -13,10 +13,21 @@ function EditPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   let {id}=useParams();
+  const navigate = useNavigate();
+
+  useEffect(function() {
+    async function getItem() {
+        let itemToEdit = await sendRequest(`/api/items/${id}`);
+    setformData({ name: itemToEdit.name, category: itemToEdit.category.name, price: itemToEdit.price });
+}
+getItem();
+}, []);
+
   const onSubmit = async () => {
     try {
       setIsSubmitting(true);
       const response = await sendRequest(`/api/items/${id}`, 'PUT', formData);
+      navigate('/items');
       console.log(response.data); // The newly created item
     } catch (error) {
       console.error(error);
@@ -32,15 +43,15 @@ function EditPage() {
   return (
     <form onSubmit={onSubmit}>
       <label htmlFor="name">Name</label>
-      <input type="text" id="name" name="name" onChange={handleChange} />
+      <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
      
 
       <label htmlFor="category">Category</label>
-      <textarea id="category" name="category" onChange={handleChange} />
+      <textarea id="category" name="category" value={formData.category} onChange={handleChange} />
      
 
       <label htmlFor="price">Price</label>
-      <input type="number" id="price" name="price" onChange={handleChange} />
+      <input type="number" id="price" name="price" value={formData.price} onChange={handleChange} />
      
 
       <label htmlFor="image">Image</label>

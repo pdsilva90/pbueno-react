@@ -1,4 +1,4 @@
-/* .App {
+.App {
   height: 100%;
 
 }
@@ -8,7 +8,7 @@
   --charcoal: rgb(56, 56, 56);
 }
 
-
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -19,102 +19,150 @@ html {
 }
 
 body {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 0 auto;
-  height: 100vh;
-  font-family: 'Lato', sans-serif;
-  color: var(--charcoal);
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  /* color: var(--charcoal); */
+  
 }
 
 .nav-container {
+  font-family: 'Montserrat';
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  color: var(--dark-gray);
-  position: fixed;
-  z-index: 1;
+  /* color: var(--dark-gray); */
+  /* position: fixed; */
+  /* z-index: 1; */
   width: 100%;
   background-color: rgba(255, 255, 255, 0.966);
 }
 
-/* .nav-logo-link {
-  width: 20%;
-  display: block;
-  cursor: pointer;
-} */
 
-/* .nav-logo {
-  width: 100%;
-} */
-
-/* .nav-list {
+.nav-list {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   list-style: none;
-  text-decoration: none; */
-/* }
+  text-decoration: none;
+  color: black;
+}
 
 .nav-item {
   list-style: none;
   text-decoration: none;
-  color: var(--dark-gray);
+  color: black;
   transition: transform 1s ease-in-out;
 }
 
-h1 {
-  
-  color: black;
-} */
-/* div { */
-  /* display: flex;
-  flex-wrap: wrap;
-  flex-direction: column; */
+.items-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'Montserrat';
   /* display: grid;
-  grid-template-columns: 1fr ;
+  grid-template-columns: 5fr 5fr;
+  grid-template-rows: 1fr 5fr; */
+ 
+  /* flex-direction: row; */
   align-content: space-around;
   align-items: center;
   justify-content: center;
-  text-align: center; */
-
-/* .App {
-  text-align: center;
+  text-align: center; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.item-card-item { 
+  /* height: 400px; */
+   /* display: flex; */
+  flex-direction: column;
+  /* flex-basis: 100%; */
+  /* flex: 1;  */
+  justify-content: space-around;
+  justify-content: space-between;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.item-card-name {
+  display: grid;
+  grid-template-columns: 5fr 5fr;
+  /* grid-template-rows: 1fr 5fr; */
+  justify-items: center;
+  /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%; */
+}
+
+.item-card-details {
+  margin: 10px;
+}
+.item-card-img {
+  
+  width: 150px;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-btn {
+  margin: 5px;
+}
+
+.hero-container {
+  height: 515px;
+  width: 100%;
+}
+
+.hero-pic {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-container {
+      height: 560px;
+  }
+  .hero-pic {
+      object-position: center;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) { 
+  .hero-container {
+      height: 700px;
+  }
+  .hero-pic {
+      object-position: center;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ .App-link {
+  color: #61dafb;
+} 
+
+.CartPage-title {
+  font-family: 'Montserrat';
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 22px;
+}
+
+.ItemsPage aside {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 3vmin 2vmin;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */ 
+
+
+

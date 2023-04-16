@@ -28,6 +28,7 @@ const newItem = new Item({
   name: req.body.name,
   category: req.body.category.name,
   price: req.body.price,
+  imageUrl: req.body.imageUrl,
 });
 newItem.save((err, item) => {
   if (err) {
@@ -46,6 +47,7 @@ Item.findByIdAndUpdate(
     name: req.body.name,
     category: req.body.category.name,
     price: req.body.price,
+    imageUrl: req.body.imageUrl,
     
   },
   { new: true },

@@ -1,9 +1,13 @@
 import './CartDetail.css';
+// import { useHistory } from 'react-router-dom';
 import CartItem from '../CartItem/CartItem';
+import * as itemsApi from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
+import * as cartPage from '../../pages/Cart/CartPage';
 
 // Used to display the details of any order, including the cart (unpaid order)
 export default function CartDetail({ order, handleChangeQty, handleCheckout }) {
+  // const history = useHistory();
   if (!order) return null;
 
   const lineItems = order.lineItems.map(item =>

@@ -9,27 +9,29 @@ export default function CartPage() {
   const navigate = useNavigate();
 
   useEffect(function() {
-    // async function getInfo() {
-    //     const items = await itemsApi.getAll();
-    //     const user = await userService.getUser()
-    //     console.log(items)
-    //      setUser(user)
-    //      setItems(items) 
-    //      setIsAdmin(user?.isAdmin || false);
-    // }
-    // getInfo();
   
   async function getCart() {
     const cart = await ordersAPI.getCart();
     setCart(cart);
   }
   getCart();
-}, []);
+}, [cartItems]);
+
 
 
   async function handleChangeQty(itemId, newQty) {
     const updatedCart = await ordersAPI.setItemQtyInCart(itemId, newQty);
-    setCartItems(updatedCart.items);
+    console.log(updatedCart)
+    // const updatedItems = cartItems.map(item => {
+    //   if (item.item._id === updatedItems.item._id) {
+    //     return updatedItems;
+    // } else {
+    //   return item;
+    // }
+  // });
+  console.log(cartItems)
+    setCartItems([...updatedCart.lineItems]);
+    console.log(cartItems)
   }
 
   async function handleCheckout() {
@@ -39,9 +41,9 @@ export default function CartPage() {
 
   return (
     <>
-    <div className='CartPage'>CartPage</div>
+    <div className='CartPage-title'>CartPage</div>
     <div>
-      <p>Items in Cart: {cartItems.length} </p>
+      {/* <p>Items in Cart: {cartItems.length} </p> */}
     </div>
     <CartDetail
     cartItems={cartItems}

@@ -3,8 +3,9 @@
   justify-content: flex-start;
   align-items: center;
   padding: 3vmin;
-  font-size: 2vmin;
-  color: var(--text-light);
+  font-size: 3vmin;
+  color: black;
+  font-family: 'Montserrat';
 }
 
 .OrderDetail .section-heading {
@@ -23,8 +24,8 @@
   display: grid;
   grid-template-columns: 18.35vw 5.75vw 5.25vw;
   padding: 1vmin 0;
-  color: var(--text-light);
-  border-top: .1vmin solid var(--tan-3);
+  color: black;
+  border-top: .1vmin solid grey;
 }
 
 .OrderDetail .total span {
@@ -32,7 +33,7 @@
   justify-content: center;
   align-items: center;
   font-size: 1.5vw;
-  color: var(--text-dark);
+  color: black;
 }
 
 .OrderDetail .total span.right {

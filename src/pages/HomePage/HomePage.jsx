@@ -9,6 +9,9 @@ import CategoryList from '../../components/CategoryList/CategoryList';
 import OrderDetail from '../../components/CartDetail/CartDetail';
 // import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import { Navbar } from 'react-bootstrap';
+import HeroContainer from '../../pages/HomePage/Hero/HeroContainer';
+import Logo from '../../components/Logo/Logo';
+// import FeaturedComponent from '../HomePage/FeaturedComponent/FeaturedComponent';
 
 export default function HomePage({ user, setUser }) {
   // const navigate = useNavigate();
@@ -18,7 +21,9 @@ export default function HomePage({ user, setUser }) {
     <section className='home-container'>
       <Navbar />
       <h1>Welcome to Our Online Store</h1>
-        <p>Check out our latest products:</p>
+        <p>Check out our latest product:</p>
+        <HeroContainer />
+        {/* <FeaturedComponent /> */}
     </ section>
   );
 }
