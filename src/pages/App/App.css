@@ -142,9 +142,9 @@ body {
   }
 }
 
- .App-link {
+ /* .App-link {
   color: #61dafb;
-} 
+}  */
 
 .CartPage-title {
   font-family: 'Montserrat';
@@ -160,6 +160,49 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 3vmin 2vmin;
+}
+
+
+.OrderHistoryPage {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 3vmin;
+  font-size: 2vmin;
+  color: black;
+}
+
+.OrderHistoryPage .section-heading {
+  width: 100%
+}
+
+.OrderHistoryPage .line-item-container {
+  margin-top: 3vmin;
+  justify-content: flex-start;
+  height: calc(100vh - 18vmin);
+  width: 100%;
+}
+
+.OrderHistoryPage .total {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 18.35vw 5.75vw 5.25vw;
+  padding: 1vmin 0;
+  color: var(--text-light);
+  border-top: .1vmin solid var(--tan-3);
+}
+
+.OrderHistoryPage .total span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vw;
+  color: var(--text-dark);
+}
+
+.OrderHistoryPage .total span.right {
+  display: flex;
+  justify-content: flex-end;
 }
 
 

@@ -18,17 +18,25 @@ function EditPage() {
   useEffect(function() {
     async function getItem() {
         let itemToEdit = await sendRequest(`/api/items/${id}`);
-    setformData({ name: itemToEdit.name, category: itemToEdit.category.name, price: itemToEdit.price });
+        if(itemToEdit) {
+    setformData({ 
+      name: itemToEdit.name || '',
+      category: itemToEdit.category || '',
+      price: itemToEdit.price || '',
+     });
+     console.log(setformData)
 }
+    }
 getItem();
 }, []);
+
 
   const onSubmit = async () => {
     try {
       setIsSubmitting(true);
       const response = await sendRequest(`/api/items/${id}`, 'PUT', formData);
-      navigate('/items');
       console.log(response.data); // The newly created item
+      navigate('/items');
     } catch (error) {
       console.error(error);
     } finally {
