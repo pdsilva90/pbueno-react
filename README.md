@@ -4,7 +4,7 @@ ROCKING BAR-B-Q is a web application that allows a business owner to display ite
 
 ## About The Application
 
-![App home page](/Users/pamelasilva/code/pbueno-react/src/Images/homepage.png)
+![App home page](./Images/homepage.png)
 
 ![App items page](/Users/pamelasilva/code/pbueno-react/src/Images/itemspage.png)
 
