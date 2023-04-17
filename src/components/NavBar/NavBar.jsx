@@ -4,6 +4,7 @@ import React from 'react';
 import { useState, useEffect, useRef } from 'react';
 import * as itemsAPI from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
+import * as userAPI from '../../utilities/users-api';
 // import './NewOrderPage.css';
 import { Link, useNavigate } from 'react-router-dom';
 // import Logo from '../../components/Logo/Logo';
@@ -14,6 +15,7 @@ import Logo from '../Logo/Logo';
 
 
 export default function NavBar({ user, setUser }) {
+    const [isAdmin, setIsAdmin] = useState(false);
   function handleLogOut() {
     userService.logOut();
     setUser(null);
@@ -41,7 +43,9 @@ export default function NavBar({ user, setUser }) {
         <Link to="/cart" style={{color: 'black'}}>Cart</Link>
         </li>
         <li className='nav-list-item'>
+        {user.isAdmin && (
         <Link to="/new" style={{color: 'black'}}>Add New Item</Link>
+        )}
         </li>
         <li className='nav-list-item'>
         <Link to="" onClick={handleLogOut} style={{color: 'black'}}>Log Out</Link>

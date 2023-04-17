@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import sendRequest from '../../utilities/send-request';
 import axios from 'axios';
+// import { useAuth } from '../../path/to/useAuth'
 
 function NewItemForm() {
   const [formData, setformData] = useState({
