@@ -4,15 +4,15 @@ ROCKING BAR-B-Q is a web application that allows a business owner to display ite
 
 ## About The Application
 
-![App home page](./Images/homepage.png)
+![homepage](https://user-images.githubusercontent.com/111029621/232495671-7ed8fa63-f3b6-4be8-97bd-1c1272f9d989.png)
 
-![App items page](/Users/pamelasilva/code/pbueno-react/src/Images/itemspage.png)
+![itemspage](https://user-images.githubusercontent.com/111029621/232495919-17276a49-2efc-4a84-8ddd-bfb03b2b2935.png)
 
-![App add new item page](/Users/pamelasilva/code/pbueno-react/src/Images/newItem.png)
+![orderpage](https://user-images.githubusercontent.com/111029621/232496270-5b5564d4-256f-4e02-ac9f-31138bf9e3fe.png)
 
-![App cart details page](/Users/pamelasilva/code/pbueno-react/src/Images/cartpage.png)
+![newItem](https://user-images.githubusercontent.com/111029621/232496465-eec1a426-026a-4840-a6fe-8d7fbb1ac10b.png)
 
-![App order details page](/Users/pamelasilva/code/pbueno-react/src/Images/orderpage.png)
+![cartpage](https://user-images.githubusercontent.com/111029621/232496919-1ca6c204-9169-427c-9ff2-5139720e81b2.png)
 
 
 ## Built With:
@@ -26,12 +26,13 @@ ROCKING BAR-B-Q is a web application that allows a business owner to display ite
 * ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 * ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 * ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+* ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 * ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
 
 ## Getting Started
 
-The web application is currently deployed on Heroku and can be accessed here: https://.herokuapp.com/
+The web application is currently deployed on Heroku and can be accessed here: https://bbq-react.herokuapp.com/
 
 Link to Trello board for project organization and task management: https://trello.com/b/GpY6pjjx/project-4
 
@@ -39,6 +40,7 @@ Link to Trello board for project organization and task management: https://trell
 ## Future Features
 
 * Optimize the application with a responsive design for mobile, tablet, and smaller screen devices.
-* Add a payment method with Stripe
-* Search feature and sorted categories
-* Admin panel to see all orders and change status
+* Add a payment method with Stripe.
+* Search feature and sorted categories.
+* Admin panel to see all orders and change status.
+* Calender to allow customers to select specific days they need for delivery.
