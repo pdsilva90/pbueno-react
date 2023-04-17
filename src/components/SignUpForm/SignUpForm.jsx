@@ -49,7 +49,7 @@ export default class SignUpForm extends Component {
             <label>Confirm</label>
             <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
             <div>
-              <input type="checkbox" name="isAdmin" /> Admin
+              {/* <input type="checkbox" name="isAdmin" /> Admin */}
             </div>
             <button type="submit" disabled={disable}>SIGN UP</button>
           </form>
