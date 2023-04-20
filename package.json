@@ -28,6 +28,7 @@
     "react-passport": "^1.1.0",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
+    "react-stripe-checkout": "^2.6.3",
     "reactstrap": "^9.1.8",
     "serve-favicon": "^2.5.0"
   },
@@ -55,5 +56,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:3001",
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4"
+  }
 }

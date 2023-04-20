@@ -5,6 +5,7 @@ import * as itemsApi from '../../utilities/items-api';
 import * as ordersAPI from '../../utilities/orders-api';
 import * as cartPage from '../../pages/Cart/CartPage';
 
+
 // Used to display the details of any order, including the cart (unpaid order)
 export default function CartDetail({ order, handleChangeQty, handleCheckout }) {
   // const history = useHistory();
